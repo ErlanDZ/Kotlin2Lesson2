@@ -14,7 +14,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/top_news"
         android:textColor="#4D5171"
-        android:textSize="45sp"
+        android:textSize="@dimen/size45sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
