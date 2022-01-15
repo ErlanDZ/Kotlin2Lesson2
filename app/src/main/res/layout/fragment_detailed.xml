@@ -1,14 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_detail_fragment"
     tools:context=".ui.fragments.detailed.DetailedFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/back_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/margin_top"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:backgroundTint="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/share_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginEnd="@dimen/margin_horizontal"
+            android:src="@drawable/ic_baseline_share_24"
+            app:backgroundTint="@color/white"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_img"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/margin_top"
+            app:cardCornerRadius="@dimen/cornerRadius_news_img"
+            app:layout_constraintTop_toBottomOf="@+id/back_fab">
+
+            <ImageView
+                android:id="@+id/mews_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@tools:sample/avatars"
+                tools:ignore="ContentDescription" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_horizontal"
+            android:textColor="@color/color_title"
+            android:textSize="@dimen/size_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_img"
+            tools:text="@string/tools_title" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_author_img"
+            android:layout_width="@dimen/width_card"
+            android:layout_height="@dimen/height_card"
+            android:layout_marginTop="@dimen/margin_top_author_img"
+            app:cardCornerRadius="@dimen/cornerRadius_author_img"
+            app:layout_constraintLeft_toLeftOf="@+id/news_title"
+            app:layout_constraintTop_toBottomOf="@+id/news_title">
+
+            <ImageView
+                android:id="@+id/author_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@tools:sample/avatars"
+                tools:ignore="ContentDescription" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/author_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginStart_author"
+            android:textColor="@color/color_text"
+            app:layout_constraintBottom_toBottomOf="@id/card_author_img"
+            app:layout_constraintLeft_toRightOf="@+id/card_author_img"
+            app:layout_constraintRight_toLeftOf="@+id/news_date"
+            app:layout_constraintTop_toTopOf="@id/card_author_img"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/news_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/color_text"
+            app:layout_constraintBottom_toBottomOf="@id/author_name"
+            app:layout_constraintLeft_toRightOf="@id/author_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/author_name"
+            tools:text="@tools:sample/date/mmddyy" />
+
+        <TextView
+            android:id="@+id/news_description"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/margin_top_news_description"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/size_news_description"
+            app:layout_constraintTop_toBottomOf="@+id/card_author_img"
+            tools:text="@tools:sample/lorem/random" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

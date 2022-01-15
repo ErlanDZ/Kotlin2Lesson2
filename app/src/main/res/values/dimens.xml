@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="margin_horizontal">15dp</dimen>
+    <dimen name="margin_top">20dp</dimen>
+    <dimen name="height_img">200dp</dimen>
+    <dimen name="cornerRadius_news_img">30dp</dimen>
+    <dimen name="size_title">20sp</dimen>
+    <dimen name="width_card">60dp</dimen>
+    <dimen name="height_card">60dp</dimen>
+    <dimen name="margin_top_author_img">10dp</dimen>
+    <dimen name="cornerRadius_author_img">120dp</dimen>
+    <dimen name="marginStart_author">5dp</dimen>
+    <dimen name="margin_top_news_description">10dp</dimen>
+    <dimen name="size_news_description">18sp</dimen>
     <dimen name="size10">10dp</dimen>
     <dimen name="size45sp">45sp</dimen>
     <dimen name="size20sp">20sp</dimen>
