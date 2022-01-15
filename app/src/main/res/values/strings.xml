@@ -2,5 +2,11 @@
     <string name="app_name">Kotlin2Lesson2</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="tools_title">Contact Lost With Sriwijaya Air Boeing 737-500 After Take Off</string>
+    <string name="tools_title">Contact Lost With Sriwijaya Air Boeing 737–500 After Take Off</string>
+    <string name="top_news">Top News</string>
+    <string name="all">All</string>
+    <string name="internation">International</string>
+    <string name="media">Media</string>
+    <string name="magazine">Magazine</string>
+    <string name="business">Business</string>
 </resources>
