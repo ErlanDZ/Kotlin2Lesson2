@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson2.presentation.ui.fragments.main
+package com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews
 
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,13 +8,7 @@ import com.example.kotlin2lesson2.databinding.FragmentMainBinding
 import com.example.kotlin2lesson2.presentation.base.BaseFragment
 import com.example.kotlin2lesson2.presentation.state.UIState
 import com.example.kotlin2lesson2.presentation.ui.adapter.topnews.bbcnews.BBCNewsAdapter
-import com.example.kotlin2lesson2.presentation.ui.adapter.topnews.business.BusinessAdapter
 import com.example.kotlin2lesson2.presentation.ui.adapter.topnews.topheadlinesintheus.TopNewsAdapter
-import com.example.kotlin2lesson2.presentation.ui.adapter.topnews.trump.TrumpAdapter
-import com.example.kotlin2lesson2.presentation.ui.fragments.main.bbcnews.BBCNewsViewModel
-import com.example.kotlin2lesson2.presentation.ui.fragments.main.business.BusinessViewModel
-import com.example.kotlin2lesson2.presentation.ui.fragments.main.topheadlinesintheus.MainViewModel
-import com.example.kotlin2lesson2.presentation.ui.fragments.main.trump.TrumpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,17 +17,18 @@ class MainFragment :
 
     override val binding by viewBinding(FragmentMainBinding::bind)
     override val viewModel: MainViewModel by viewModels()
-    private val bbcNewsViewModel: BBCNewsViewModel by viewModels()
-    private val businessViewModel: BusinessViewModel by viewModels()
-    private val trumpViewModel: TrumpViewModel by viewModels()
 
     private val topNewsAdapter = TopNewsAdapter()
     private val bbcNewsAdapter = BBCNewsAdapter()
-    private val businessAdapter = BusinessAdapter()
-    private val trumpAdapter = TrumpAdapter()
 
     override fun setupRequests() {
-        viewModel.fetchTopNews()
+        viewModel.fetchTopNews(
+            "us", "", "", "",
+        )
+
+        viewModel.fetchCategories(
+            "", "", "bbc-news", "",
+        )
         setupTopNewsRecycler()
     }
 
@@ -47,7 +42,6 @@ class MainFragment :
         recyclerViewVerticalTopNews.adapter = topNewsAdapter
 
         recyclerViewHorizontal.adapter = bbcNewsAdapter
-        bbcNewsViewModel.fetchBBCNews()
 
         setupListener()
     }
@@ -65,45 +59,12 @@ class MainFragment :
                 }
             }
         }
-
-            bbcNewsViewModel.bbcNewsState.subscribe {
-                when (it) {
-                    is UIState.Error -> {
-
-                    }
-                    is UIState.Loading -> {
-
-                    }
-                    is UIState.Success -> {
-                        bbcNewsAdapter.submitList(it.data)
-                    }
-                }
-            }
-
-        businessViewModel.businessState.subscribe {
+        viewModel.categoriesState.subscribe {
             when (it) {
-                is UIState.Error -> {
-
-                }
-                is UIState.Loading -> {
-
-                }
+                is UIState.Error -> {}
+                is UIState.Loading -> {}
                 is UIState.Success -> {
-                    businessAdapter.submitList(it.data)
-                }
-            }
-        }
-
-        trumpViewModel.trumpState.subscribe {
-            when (it) {
-                is UIState.Error -> {
-
-                }
-                is UIState.Loading -> {
-
-                }
-                is UIState.Success -> {
-                    trumpAdapter.submitList(it.data)
+                    bbcNewsAdapter.submitList(it.data)
                 }
             }
         }
@@ -111,18 +72,30 @@ class MainFragment :
 
     private fun setupListener() = with(binding) {
         bbcNews.setOnClickListener {
-            recyclerViewHorizontal.adapter = bbcNewsAdapter
-            bbcNewsViewModel.fetchBBCNews()
+            viewModel.fetchCategories(
+                "",
+                "",
+                "bbc-news",
+                "",
+            )
         }
 
         business.setOnClickListener {
-            recyclerViewHorizontal.adapter = businessAdapter
-            businessViewModel.fetchBusiness()
+            viewModel.fetchCategories(
+                "de",
+                "business",
+                "",
+                "",
+            )
         }
 
         trump.setOnClickListener {
-            recyclerViewHorizontal.adapter = trumpAdapter
-            trumpViewModel.fetchTrump()
+            viewModel.fetchCategories(
+                "",
+                "",
+                "",
+                "trump",
+            )
         }
 
         bitcoin.setOnClickListener {

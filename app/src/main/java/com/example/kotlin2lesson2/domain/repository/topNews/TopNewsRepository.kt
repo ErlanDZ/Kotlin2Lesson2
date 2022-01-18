@@ -6,11 +6,11 @@ import kotlinx.coroutines.flow.Flow
 
 interface TopNewsRepository {
 
-    fun fetchTopNewsRepository(): Flow<Resource<List<News>>>
+    fun fetchTopNewsRepository(
+        country: String?,
+        category: String?,
+        sources: String?,
+        q: String?,
+    ): Flow<Resource<List<News>>>
 
-    fun fetchBBCNewsRepository(): Flow<Resource<List<News>>>
-
-    fun fetchBusinessHeadlinesFromGermany(): Flow<Resource<List<News>>>
-
-    fun fetchHeadlinesAboutTrump(): Flow<Resource<List<News>>>
 }

@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson2.presentation.ui.fragments.main.topheadlinesintheus
+package com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews
 
 import com.example.kotlin2lesson2.domain.usecase.topNews.FetchTopNewsUseCase
 import com.example.kotlin2lesson2.presentation.base.BaseViewModel
@@ -18,9 +18,28 @@ class MainViewModel @Inject constructor(
     private val _topNewsState = MutableStateFlow<UIState<List<NewsUI>>>(UIState.Loading())
     val topNewsState: StateFlow<UIState<List<NewsUI>>> = _topNewsState
 
-    fun fetchTopNews() {
+    private val _categoriesState = MutableStateFlow<UIState<List<NewsUI>>>(UIState.Loading())
+    val categoriesState: StateFlow<UIState<List<NewsUI>>> = _categoriesState
+
+    fun fetchTopNews(
+        country: String?,
+        category: String?,
+        sources: String?,
+        q: String?,
+    ) {
         _topNewsState.subscribeTo(
-            { fetchTopNewsUseCase() },
+            { fetchTopNewsUseCase(country, category, sources, q) },
+            { it.map { data -> data.toUI() } })
+    }
+
+    fun fetchCategories(
+        country: String?,
+        category: String?,
+        sources: String?,
+        q: String?,
+    ) {
+        _categoriesState.subscribeTo(
+            { fetchTopNewsUseCase(country, category, sources, q) },
             { it.map { data -> data.toUI() } })
     }
 }
