@@ -1,16 +1,16 @@
-package com.example.kotlin2lesson2.presentation.ui.adapter.topnews
+package com.example.kotlin2lesson2.presentation.ui.adapter.topnews.topheadlinesintheus
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.kotlin2lesson2.R
 import com.example.kotlin2lesson2.databinding.TopNewsItemBinding
 import com.example.kotlin2lesson2.presentation.base.BaseComparator
-import com.example.kotlin2lesson2.presentation.model.TopNewsUI
+import com.example.kotlin2lesson2.presentation.model.NewsUI
 
-class TopNewsAdapter : ListAdapter<TopNewsUI, TopNewsAdapter.TopNewsViewHolder>(
+class TopNewsAdapter(
+) : ListAdapter<NewsUI, TopNewsAdapter.TopNewsViewHolder>(
     BaseComparator()
 ) {
 
@@ -27,20 +27,21 @@ class TopNewsAdapter : ListAdapter<TopNewsUI, TopNewsAdapter.TopNewsViewHolder>(
         }
     }
 
-    class TopNewsViewHolder(
+    inner class TopNewsViewHolder(
         private val binding: TopNewsItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(news: TopNewsUI) = with(binding) {
+        fun onBind(news: NewsUI) = with(binding) {
             title.text = news.title
             publishedAt.text = news.publishedAt
-            if (news.author == ""){
+            if (news.author == "") {
                 val users = "User"
                 user.text = users
-            }else{
+            } else {
                 user.text = news.author
             }
             imageTopNews.load(news.urlToImage)
         }
     }
+
 }

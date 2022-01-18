@@ -1,8 +1,8 @@
 package com.example.kotlin2lesson2.domain.model
 
-import com.example.kotlin2lesson2.presentation.model.TopNewsUI
+import com.example.kotlin2lesson2.presentation.model.NewsUI
 
-class TopNews(
+class News(
     val source: Source,
     val author: String?,
     val title: String?,
@@ -12,7 +12,7 @@ class TopNews(
     val publishedAt: String?,
 )
 
-fun TopNews.toSourceUI() = TopNewsUI(
+fun News.toSourceUI() = NewsUI(
     source.toSourceUI(),
     author,
     title,

@@ -1,10 +1,10 @@
 package com.example.kotlin2lesson2.presentation.model
 
-import com.example.kotlin2lesson2.domain.model.TopNews
+import com.example.kotlin2lesson2.domain.model.News
 import com.example.kotlin2lesson2.presentation.base.IBaseDiffModel
 
-class TopNewsUI(
-    val source: SourceUI,
+class NewsUI(
+    override val source: SourceUI,
     val author: String?,
     val title: String?,
     val description: String?,
@@ -12,16 +12,14 @@ class TopNewsUI(
     val urlToImage: String?,
     val publishedAt: String?,
 ) : IBaseDiffModel {
-    override val id: String
-        get() = TODO("Not yet implemented")
 }
 
-fun TopNews.toUI() = TopNewsUI(
+fun News.toUI() = NewsUI(
     source.toUI(),
     author,
     title,
     description,
     url,
     urlToImage,
-    publishedAt
+    publishedAt,
 )

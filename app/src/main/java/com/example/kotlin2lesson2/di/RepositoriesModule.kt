@@ -1,6 +1,8 @@
 package com.example.kotlin2lesson2.di
 
-import com.example.kotlin2lesson2.data.repository.TopNewsRepositoryImpl
+import com.example.kotlin2lesson2.data.repository.everthing.EverythingRepositoriesImpl
+import com.example.kotlin2lesson2.data.repository.topnews.TopNewsRepositoriesImpl
+import com.example.kotlin2lesson2.domain.repository.topNews.EverythingRepositories
 import com.example.kotlin2lesson2.domain.repository.topNews.TopNewsRepository
 import dagger.Binds
 import dagger.Module
@@ -13,6 +15,11 @@ abstract class RepositoriesModule {
 
     @Binds
     abstract fun provideTopNewsRepository(
-        topNewsRepositoryImpl: TopNewsRepositoryImpl
+        topHeadlinesInTheUSRepositoriesImpl: TopNewsRepositoriesImpl
     ): TopNewsRepository
+
+    @Binds
+    abstract fun provideEverythingRepositories(
+        everythingRepositoriesImpl: EverythingRepositoriesImpl
+    ): EverythingRepositories
 }

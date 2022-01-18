@@ -1,6 +1,7 @@
 package com.example.kotlin2lesson2.data.remote
 
 import com.example.kotlin2lesson2.common.constance.Constance
+import com.example.kotlin2lesson2.data.remote.apiservice.EverythingApiService
 import com.example.kotlin2lesson2.data.remote.apiservice.NewsApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -32,5 +33,9 @@ class RetrofitClient {
 
     fun provideNewsApiService(): NewsApiService = provideRetrofit.create(
         NewsApiService::class.java
+    )
+
+    fun provideEverythingApiService(): EverythingApiService = provideRetrofit.create(
+        EverythingApiService::class.java
     )
 }

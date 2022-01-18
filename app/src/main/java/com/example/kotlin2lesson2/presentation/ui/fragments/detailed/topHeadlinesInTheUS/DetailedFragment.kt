@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson2.presentation.ui.fragments.detailed
+package com.example.kotlin2lesson2.presentation.ui.fragments.detailed.topHeadlinesInTheUS
 
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding

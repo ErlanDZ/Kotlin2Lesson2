@@ -1,9 +1,9 @@
 package com.example.kotlin2lesson2.data.remote.dtos.topnews
 
-import com.example.kotlin2lesson2.domain.model.TopNews
+import com.example.kotlin2lesson2.domain.model.News
 import com.google.gson.annotations.SerializedName
 
-data class TopNewsDto(
+data class NewsDto(
     @SerializedName("source")
     val source: SourceDto,
 
@@ -26,7 +26,7 @@ data class TopNewsDto(
     val publishedAt: String?,
 )
 
-fun TopNewsDto.toDomain() = TopNews(
+fun NewsDto.toDomain() = News(
     source.toDomain(),
     author,
     title,
