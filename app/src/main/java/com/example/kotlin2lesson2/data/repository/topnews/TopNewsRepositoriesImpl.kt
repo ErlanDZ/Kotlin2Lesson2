@@ -3,7 +3,7 @@ package com.example.kotlin2lesson2.data.repository.topnews
 import com.example.kotlin2lesson2.common.base.BaseRepository
 import com.example.kotlin2lesson2.common.resource.Resource
 import com.example.kotlin2lesson2.data.remote.apiservice.NewsApiService
-import com.example.kotlin2lesson2.data.remote.dtos.topnews.toDomain
+import com.example.kotlin2lesson2.data.remote.dtos.news.toDomain
 import com.example.kotlin2lesson2.domain.model.News
 import com.example.kotlin2lesson2.domain.repository.topNews.TopNewsRepository
 import kotlinx.coroutines.flow.Flow

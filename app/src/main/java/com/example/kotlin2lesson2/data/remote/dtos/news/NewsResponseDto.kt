@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson2.data.remote.dtos.topnews
+package com.example.kotlin2lesson2.data.remote.dtos.news
 
 import com.google.gson.annotations.SerializedName
 
@@ -11,4 +11,7 @@ data class NewsResponseDto<T>(
 
     @SerializedName("articles")
     val article: List<T>,
+
+    @SerializedName("sources")
+    val sources: List<T>,
 )

@@ -12,5 +12,4 @@ interface TopNewsRepository {
         sources: String?,
         q: String?,
     ): Flow<Resource<List<News>>>
-
 }

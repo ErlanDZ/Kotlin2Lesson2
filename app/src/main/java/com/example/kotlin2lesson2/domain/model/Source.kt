@@ -2,12 +2,22 @@ package com.example.kotlin2lesson2.domain.model
 
 import com.example.kotlin2lesson2.presentation.model.SourceUI
 
-class Source(
+data class Source(
     val id: String?,
     val name: String,
+    val description: String?,
+    val url: String?,
+    val category: String?,
+    val language: String?,
+    val country: String?,
 )
 
 fun Source.toSourceUI() = SourceUI(
     id,
     name,
+    description,
+    url,
+    category,
+    language,
+    country,
 )

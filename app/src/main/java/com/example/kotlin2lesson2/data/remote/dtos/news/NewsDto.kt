@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson2.data.remote.dtos.topnews
+package com.example.kotlin2lesson2.data.remote.dtos.news
 
 import com.example.kotlin2lesson2.domain.model.News
 import com.google.gson.annotations.SerializedName

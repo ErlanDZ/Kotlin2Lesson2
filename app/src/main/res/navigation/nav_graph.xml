@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailedFragment"
-        android:name="com.example.kotlin2lesson2.presentation.ui.fragments.detailed.topHeadlinesInTheUS.DetailedFragment"
+        android:name="com.example.kotlin2lesson2.presentation.ui.fragments.detailed.DetailedFragment"
         android:label="fragment_detailed"
         tools:layout="@layout/fragment_detailed" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson2.presentation.ui.adapter.topnews.bbcnews
+package com.example.kotlin2lesson2.presentation.ui.adapter.topnews.news
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.example.kotlin2lesson2.databinding.NewsItemBinding
 import com.example.kotlin2lesson2.presentation.base.BaseComparator
 import com.example.kotlin2lesson2.presentation.model.NewsUI
 
-class BBCNewsAdapter : ListAdapter<NewsUI, BBCNewsAdapter.NewsViewHolder>(
+class NewsAdapter : ListAdapter<NewsUI, NewsAdapter.NewsViewHolder>(
     BaseComparator()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {

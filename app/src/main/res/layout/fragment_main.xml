@@ -90,18 +90,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin20dp"
-                android:text="@string/tech_crunch"
-                android:textSize="@dimen/size15sp" />
-
-            <TextView
-                android:id="@+id/the_next_web"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin20dp"
-                android:text="@string/the_next_web"
+                android:text="@string/techCrunch_and_the_next_web"
                 android:textSize="@dimen/size15sp" />
         </LinearLayout>
-
     </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -113,6 +104,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/category"
         tools:listitem="@layout/news_item" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

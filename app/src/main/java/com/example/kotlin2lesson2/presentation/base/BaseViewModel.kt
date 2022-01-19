@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 open class BaseViewModel : ViewModel() {
     protected fun <T, S> MutableStateFlow<UIState<S>>.subscribeTo(
         request: () -> Flow<Resource<T>>,
-        mappedData: (T) -> S
+        mappedData: (T) -> S,
     ) {
         viewModelScope.launch(Dispatchers.IO) {
             request().collect {

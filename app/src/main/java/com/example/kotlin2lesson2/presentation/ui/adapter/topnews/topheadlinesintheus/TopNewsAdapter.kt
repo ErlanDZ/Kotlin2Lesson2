@@ -9,8 +9,7 @@ import com.example.kotlin2lesson2.databinding.TopNewsItemBinding
 import com.example.kotlin2lesson2.presentation.base.BaseComparator
 import com.example.kotlin2lesson2.presentation.model.NewsUI
 
-class TopNewsAdapter(
-) : ListAdapter<NewsUI, TopNewsAdapter.TopNewsViewHolder>(
+class TopNewsAdapter : ListAdapter<NewsUI, TopNewsAdapter.TopNewsViewHolder>(
     BaseComparator()
 ) {
 

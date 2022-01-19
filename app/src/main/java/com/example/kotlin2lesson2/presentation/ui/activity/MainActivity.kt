@@ -1,7 +1,7 @@
 package com.example.kotlin2lesson2.presentation.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.example.kotlin2lesson2.R
 import com.example.kotlin2lesson2.databinding.ActivityMainBinding

@@ -11,8 +11,7 @@ class NewsUI(
     val url: String?,
     val urlToImage: String?,
     val publishedAt: String?,
-) : IBaseDiffModel {
-}
+) : IBaseDiffModel
 
 fun News.toUI() = NewsUI(
     source.toUI(),

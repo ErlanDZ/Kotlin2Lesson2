@@ -7,7 +7,7 @@ import com.example.kotlin2lesson2.R
 import com.example.kotlin2lesson2.databinding.FragmentMainBinding
 import com.example.kotlin2lesson2.presentation.base.BaseFragment
 import com.example.kotlin2lesson2.presentation.state.UIState
-import com.example.kotlin2lesson2.presentation.ui.adapter.topnews.bbcnews.BBCNewsAdapter
+import com.example.kotlin2lesson2.presentation.ui.adapter.topnews.news.NewsAdapter
 import com.example.kotlin2lesson2.presentation.ui.adapter.topnews.topheadlinesintheus.TopNewsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,7 +19,7 @@ class MainFragment :
     override val viewModel: MainViewModel by viewModels()
 
     private val topNewsAdapter = TopNewsAdapter()
-    private val bbcNewsAdapter = BBCNewsAdapter()
+    private val newsAdapter = NewsAdapter()
 
     override fun setupRequests() {
         viewModel.fetchTopNews(
@@ -41,7 +41,7 @@ class MainFragment :
 
         recyclerViewVerticalTopNews.adapter = topNewsAdapter
 
-        recyclerViewHorizontal.adapter = bbcNewsAdapter
+        recyclerViewHorizontal.adapter = newsAdapter
 
         setupListener()
     }
@@ -59,12 +59,23 @@ class MainFragment :
                 }
             }
         }
+
         viewModel.categoriesState.subscribe {
             when (it) {
                 is UIState.Error -> {}
                 is UIState.Loading -> {}
                 is UIState.Success -> {
-                    bbcNewsAdapter.submitList(it.data)
+                    newsAdapter.submitList(it.data)
+                }
+            }
+        }
+
+        viewModel.newsEverythingState.subscribe {
+            when (it) {
+                is UIState.Error -> {}
+                is UIState.Loading -> {}
+                is UIState.Success -> {
+                    newsAdapter.submitList(it.data)
                 }
             }
         }
@@ -99,19 +110,42 @@ class MainFragment :
         }
 
         bitcoin.setOnClickListener {
-
+            viewModel.fetchEvNews(
+                "bitcoin",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            )
         }
 
         apple.setOnClickListener {
-
+            viewModel.fetchEvNews(
+                "apple",
+                "2022-01-17",
+                "2022-01-17",
+                "popularity",
+                "",
+                "",
+                "",
+                "",
+            )
         }
 
         techCrunch.setOnClickListener {
-
-        }
-
-        theNextWeb.setOnClickListener {
-
+            viewModel.fetchEvNews(
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "techcrunch.com,thenextweb.com",
+                "",
+            )
         }
     }
 }

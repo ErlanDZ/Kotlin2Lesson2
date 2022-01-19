@@ -1,7 +1,7 @@
 package com.example.kotlin2lesson2.data.remote.apiservice
 
-import com.example.kotlin2lesson2.data.remote.dtos.topnews.NewsDto
-import com.example.kotlin2lesson2.data.remote.dtos.topnews.NewsResponseDto
+import com.example.kotlin2lesson2.data.remote.dtos.news.NewsDto
+import com.example.kotlin2lesson2.data.remote.dtos.news.NewsResponseDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -9,7 +9,7 @@ interface EverythingApiService {
 
     @GET("/v2/everything")
     suspend fun fetchEverything(
-        @Query("apiKey") apiKey: String?,
+        @Query("apiKey") apiKey: String,
         @Query("q") q: String?,
         @Query("from") from: String?,
         @Query("to") to: String?,
