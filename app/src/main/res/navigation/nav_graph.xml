@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.kotlin2lesson2.ui.fragments.main.MainFragment"
+        android:name="com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailedFragment"
-        android:name="com.example.kotlin2lesson2.ui.fragments.detailed.DetailedFragment"
+        android:name="com.example.kotlin2lesson2.presentation.ui.fragments.detailed.DetailedFragment"
         android:label="fragment_detailed"
         tools:layout="@layout/fragment_detailed" />
 </navigation>

@@ -4,80 +4,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.main.MainFragment">
+    tools:context=".presentation.ui.fragments.main.topnews.MainFragment">
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin20dp"
-        android:layout_marginTop="@dimen/margin20dp"
+        android:layout_marginTop="@dimen/margin10dp"
         android:text="@string/top_news"
         android:textColor="#4D5171"
-        android:textSize="@dimen/size45sp"
+        android:textSize="@dimen/size30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_vertical"
+        android:id="@+id/recycler_view_vertical_top_news"
         android:layout_width="0dp"
         android:layout_height="@dimen/height360dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text"
-        app:layout_constraintBottom_toTopOf="@id/recycler_view_horizontal"
         tools:listitem="@layout/top_news_item" />
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:id="@+id/category"
-        app:layout_constraintTop_toBottomOf="@id/recycler_view_vertical"
+        app:layout_constraintTop_toBottomOf="@id/recycler_view_vertical_top_news"
         app:layout_constraintBottom_toTopOf="@id/recycler_view_horizontal"
         tools:ignore="MissingConstraints"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/all"
-            android:layout_marginHorizontal="@dimen/margin15dp"
-            android:textSize="@dimen/size15sp"/>
+        <LinearLayout
+            android:id="@+id/position"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin20dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/internation"
-            android:layout_marginHorizontal="@dimen/margin15dp"
-            android:textSize="@dimen/size15sp"/>
+            <TextView
+                android:id="@+id/bbc_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin20dp"
+                android:text="@string/bbc_news"
+                android:textSize="@dimen/size15sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/media"
-            android:layout_marginHorizontal="15dp"
-            android:textSize="@dimen/size15sp"/>
+            <TextView
+                android:id="@+id/business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin20dp"
+                android:text="@string/business"
+                android:textSize="@dimen/size15sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/magazine"
-            android:layout_marginHorizontal="@dimen/margin15dp"
-            android:textSize="@dimen/size15sp"/>
+            <TextView
+                android:id="@+id/trump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin20dp"
+                android:text="@string/trump"
+                android:textSize="@dimen/size15sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/business"
-            android:layout_marginHorizontal="@dimen/margin15dp"
-            android:textSize="@dimen/size15sp"/>
+            <TextView
+                android:id="@+id/bitcoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin20dp"
+                android:text="@string/bitcoin"
+                android:textSize="@dimen/size15sp" />
 
+            <TextView
+                android:id="@+id/apple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin20dp"
+                android:text="@string/apple"
+                android:textSize="@dimen/size15sp" />
 
-
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tech_crunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin20dp"
+                android:text="@string/techCrunch_and_the_next_web"
+                android:textSize="@dimen/size15sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_horizontal"

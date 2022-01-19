@@ -14,7 +14,7 @@
     <dimen name="size_news_description">18sp</dimen>
     <dimen name="size10">10dp</dimen>
     <dimen name="size45sp">45sp</dimen>
-    <dimen name="size20sp">20sp</dimen>
+    <dimen name="size30sp">30sp</dimen>
     <dimen name="margin137dp">137dp</dimen>
     <dimen name="height40dp">40dp</dimen>
     <dimen name="cardCornerRadius50dp">50dp</dimen>
@@ -26,9 +26,11 @@
     <dimen name="margin15dp">15dp</dimen>
     <dimen name="cardCornerRadius30dp">30dp</dimen>
     <dimen name="width120dp">120dp</dimen>
-    <dimen name="height120dp">120dp</dimen>
+    <dimen name="height120dp">100dp</dimen>
     <dimen name="margin25dp">25dp</dimen>
     <dimen name="size15sp">15sp</dimen>
     <dimen name="margin10dp">10dp</dimen>
     <dimen name="height360dp">360dp</dimen>
+    <dimen name="margin325dp">325dp</dimen>
+    <dimen name="size20sp">20sp</dimen>
 </resources>

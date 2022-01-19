@@ -3,10 +3,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tools_title">Contact Lost With Sriwijaya Air Boeing 737–500 After Take Off</string>
-    <string name="top_news">Top News</string>
-    <string name="all">All</string>
+    <string name="top_news">Top headlines in the US</string>
+    <string name="bbc_news">BBC News</string>
     <string name="internation">International</string>
-    <string name="media">Media</string>
+    <string name="trump">Trump</string>
     <string name="magazine">Magazine</string>
     <string name="business">Business</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="apple">Apple</string>
+    <string name="techCrunch_and_the_next_web">TechCrunch and The Next Web</string>
+    <string name="the_next_web">The Next Web</string>
 </resources>
