@@ -22,7 +22,7 @@
             android:scaleType="fitXY"
             android:layout_width="@dimen/width120dp"
             android:layout_height="@dimen/height120dp"
-            tools:src="@tools:sample/avatars"
+            tools:src="@drawable/news_image"
             tools:ignore="ContentDescription" />
     </androidx.cardview.widget.CardView>
 

@@ -1,6 +1,9 @@
 package com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews
 
+import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.kotlin2lesson2.R
@@ -53,8 +56,12 @@ class MainFragment :
                 is UIState.Error -> {
                 }
                 is UIState.Loading -> {
+                    binding.recyclerViewVerticalTopNews.visibility = View.GONE
+                    binding.progressBar.visibility = View.VISIBLE
                 }
                 is UIState.Success -> {
+                    binding.recyclerViewVerticalTopNews.visibility = View.VISIBLE
+                    binding.progressBar.visibility = View.GONE
                     topNewsAdapter.submitList(it.data)
                 }
             }
@@ -63,8 +70,13 @@ class MainFragment :
         viewModel.categoriesState.subscribe {
             when (it) {
                 is UIState.Error -> {}
-                is UIState.Loading -> {}
+                is UIState.Loading -> {
+                    binding.recyclerViewHorizontal.visibility = View.GONE
+                    binding.progressBar2.visibility = View.VISIBLE
+                }
                 is UIState.Success -> {
+                    binding.recyclerViewHorizontal.visibility = View.VISIBLE
+                    binding.progressBar2.visibility = View.GONE
                     newsAdapter.submitList(it.data)
                 }
             }
@@ -73,8 +85,13 @@ class MainFragment :
         viewModel.newsEverythingState.subscribe {
             when (it) {
                 is UIState.Error -> {}
-                is UIState.Loading -> {}
+                is UIState.Loading -> {
+                    binding.recyclerViewHorizontal.visibility = View.GONE
+                    binding.progressBar2.visibility = View.VISIBLE
+                }
                 is UIState.Success -> {
+                    binding.recyclerViewHorizontal.visibility = View.VISIBLE
+                    binding.progressBar2.visibility = View.GONE
                     newsAdapter.submitList(it.data)
                 }
             }
