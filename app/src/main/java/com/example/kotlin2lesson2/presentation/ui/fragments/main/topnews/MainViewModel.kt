@@ -71,35 +71,4 @@ class MainViewModel @Inject constructor(
             {it.map { data-> data.toUI() }}
         )
     }
-//
-//    fun fetchEverything(
-//        q: String?,
-//        from: String?,
-//        to: String?,
-//        sortBy: String?,
-//        qInTitle: String,
-//        sources: String,
-//        domains: String,
-//        excludeDomains: String,
-//    ) {
-//        _newsEverythingState.subscribeTo(
-//            {
-//                fetchNewsEverythingUseCase(
-//                    q,
-//                    from,
-//                    to,
-//                    sortBy,
-//                    qInTitle,
-//                    sources,
-//                    domains,
-//                    excludeDomains,
-//                )
-//            },
-//            {
-//                it.map { data ->
-//                    data.toUI()
-//                }
-//            }
-//        )
-//    }
 }

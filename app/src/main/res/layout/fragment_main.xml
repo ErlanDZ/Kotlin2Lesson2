@@ -19,6 +19,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/category"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recycler_view_vertical_top_news" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_vertical_top_news"
         android:layout_width="0dp"
@@ -34,7 +44,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/category"
         app:layout_constraintTop_toBottomOf="@id/recycler_view_vertical_top_news"
-        app:layout_constraintBottom_toTopOf="@id/recycler_view_horizontal"
         tools:ignore="MissingConstraints"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -42,7 +51,8 @@
         <LinearLayout
             android:id="@+id/position"
             android:layout_width="0dp"
-            android:layout_height="@dimen/margin20dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
@@ -51,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin20dp"
                 android:text="@string/bbc_news"
-                android:textSize="@dimen/size15sp" />
+                android:textSize="@dimen/size20sp" />
 
             <TextView
                 android:id="@+id/business"
@@ -59,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin20dp"
                 android:text="@string/business"
-                android:textSize="@dimen/size15sp" />
+                android:textSize="@dimen/size20sp" />
 
             <TextView
                 android:id="@+id/trump"
@@ -67,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin20dp"
                 android:text="@string/trump"
-                android:textSize="@dimen/size15sp" />
+                android:textSize="@dimen/size20sp" />
 
             <TextView
                 android:id="@+id/bitcoin"
@@ -75,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin20dp"
                 android:text="@string/bitcoin"
-                android:textSize="@dimen/size15sp" />
+                android:textSize="@dimen/size20sp" />
 
             <TextView
                 android:id="@+id/apple"
@@ -83,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin20dp"
                 android:text="@string/apple"
-                android:textSize="@dimen/size15sp" />
+                android:textSize="@dimen/size20sp" />
 
             <TextView
                 android:id="@+id/tech_crunch"
@@ -91,13 +101,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin20dp"
                 android:text="@string/techCrunch_and_the_next_web"
-                android:textSize="@dimen/size15sp" />
+                android:textSize="@dimen/size20sp" />
         </LinearLayout>
     </HorizontalScrollView>
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar_2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_view_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recycler_view_horizontal" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/margin10dp"
         android:layout_height="@dimen/cardElevation0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
