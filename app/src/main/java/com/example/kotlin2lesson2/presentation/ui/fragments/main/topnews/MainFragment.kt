@@ -2,6 +2,7 @@ package com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews
 
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.kotlin2lesson2.R
 import com.example.kotlin2lesson2.databinding.FragmentMainBinding
@@ -34,8 +35,8 @@ class MainFragment :
 
     private fun setupTopNewsRecycler() = with(binding) {
         recyclerViewVerticalTopNews.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-
+        LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        PagerSnapHelper().attachToRecyclerView(recyclerViewVerticalTopNews)
         recyclerViewHorizontal.layoutManager =
             LinearLayoutManager(context)
 
