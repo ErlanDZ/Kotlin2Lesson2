@@ -21,12 +21,17 @@
             app:cardCornerRadius="@dimen/height40dp"
             app:cardElevation="0dp">
 
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
             <ImageView
                 android:scaleType="fitXY"
                 android:id="@+id/image_top_news"
                 android:layout_width="@dimen/width370dp"
                 android:layout_height="@dimen/height210dp"
-                tools:src="@drawable/test_image"
+                tools:src="@drawable/news_image"
                 tools:ignore="ContentDescription" />
         </androidx.cardview.widget.CardView>
 
@@ -36,6 +41,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="@color/black"
+            android:maxHeight="50dp"
             android:textSize="@dimen/size15sp"
             android:layout_marginTop="@dimen/margin10dp"
             tools:text="Population of the tabs to display is done through TabLayout." />

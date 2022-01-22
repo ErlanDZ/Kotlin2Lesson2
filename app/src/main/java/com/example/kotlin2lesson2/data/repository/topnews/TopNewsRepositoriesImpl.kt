@@ -13,7 +13,7 @@ class TopNewsRepositoriesImpl @Inject constructor(
     private val service: NewsApiService,
 ) : BaseRepository(), TopNewsRepository {
 
-    private var positionPageSize: Int = 20
+    private var positionPageSize: Int = 10
     private var positionPage: Int = 1
 
     override fun fetchTopNewsRepository(

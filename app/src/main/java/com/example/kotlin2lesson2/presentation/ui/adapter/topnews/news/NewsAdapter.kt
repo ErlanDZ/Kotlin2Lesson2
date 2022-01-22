@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.kotlin2lesson2.R
 import com.example.kotlin2lesson2.databinding.NewsItemBinding
 import com.example.kotlin2lesson2.presentation.base.BaseComparator
 import com.example.kotlin2lesson2.presentation.model.NewsUI
@@ -30,7 +31,6 @@ class NewsAdapter : ListAdapter<NewsUI, NewsAdapter.NewsViewHolder>(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(news: NewsUI) = with(binding) {
-            imageNews.load(news.urlToImage)
             publishedAt.text = news.publishedAt
             titleNews.text = news.title
             if (news.source.name == "") {
@@ -38,6 +38,11 @@ class NewsAdapter : ListAdapter<NewsUI, NewsAdapter.NewsViewHolder>(
                 userNews.text = users
             } else {
                 userNews.text = news.author
+            }
+            if (news.urlToImage == null) {
+                imageNews.setImageResource(R.drawable.news_image)
+            } else {
+                imageNews.load(news.urlToImage)
             }
         }
     }

@@ -1,6 +1,5 @@
 package com.example.kotlin2lesson2.data.repository.everthing
 
-import android.util.Log
 import com.example.kotlin2lesson2.common.base.BaseRepository
 import com.example.kotlin2lesson2.common.resource.Resource
 import com.example.kotlin2lesson2.data.remote.apiservice.EverythingApiService
@@ -14,8 +13,8 @@ class EverythingRepositoriesImpl @Inject constructor(
     private val service: EverythingApiService,
 ) : BaseRepository(), EverythingRepositories {
 
-    private var positionPageSize: Int = 20
-    private var positionPage: Int = 1
+    private var positionPageSize: Int = 100
+    private var positionPage: Int = 100
 
     override fun fetchNewsEverythingRepositories(
         q: String?,
@@ -37,8 +36,8 @@ class EverythingRepositoriesImpl @Inject constructor(
             sources,
             domains,
             excludeDomains,
-            positionPage,
-            positionPageSize
+            positionPageSize,
+//            positionPage,
         )
             .article.map {
                 it.toDomain()

@@ -19,6 +19,6 @@ interface EverythingApiService {
         @Query("domains") domains: String,
         @Query("excludeDomains") excludeDomains: String,
         @Query("pageSize") pageSize: Int?,
-        @Query("page") page: Int?,
+//        @Query("page") page: Int?,
     ): NewsResponseDto<NewsDto>
 }
