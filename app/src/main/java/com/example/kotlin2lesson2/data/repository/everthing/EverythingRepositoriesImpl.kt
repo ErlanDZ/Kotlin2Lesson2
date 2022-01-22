@@ -27,7 +27,7 @@ class EverythingRepositoriesImpl @Inject constructor(
         excludeDomains: String,
     ): Flow<Resource<List<News>>> = doRequest {
         service.fetchEverything(
-            "ff5055382de94f40acc1f10f5b414619",
+            "393ed9c67e7e46548ad8f15d5694fea0",
             q,
             from,
             to,
