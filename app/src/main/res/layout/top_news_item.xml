@@ -1,83 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/width370dp"
-    android:layout_height="@dimen/margin325dp"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_gravity="center_horizontal"
-    android:layout_margin="@dimen/margin15dp"
-    app:cardCornerRadius="@dimen/height40dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="35dp"
+    app:cardElevation="4dp"
+    android:layout_marginVertical="5dp"
+    android:layout_marginHorizontal="@dimen/size10"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:cardCornerRadius="@dimen/height40dp"
-            app:cardElevation="0dp">
-
-            <ProgressBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:scaleType="fitXY"
-                android:id="@+id/image_top_news"
-                android:layout_width="@dimen/width370dp"
-                android:layout_height="@dimen/height210dp"
-                tools:src="@drawable/news_image"
-                tools:ignore="ContentDescription" />
-        </androidx.cardview.widget.CardView>
+        <ImageView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/title"
+            android:id="@+id/image_top_news"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            tools:src="@drawable/news_image"/>
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="@dimen/width350dp"
+            app:layout_constraintStart_toStartOf="@id/image_top_news"
+            app:layout_constraintEnd_toEndOf="@id/image_top_news"
+            app:layout_constraintTop_toBottomOf="@id/image_top_news"
+            app:layout_constraintBottom_toTopOf="@id/image_users"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="@dimen/margin20dp"
+            android:maxLines="1"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:maxHeight="50dp"
             android:textSize="@dimen/size15sp"
-            android:layout_marginTop="@dimen/margin10dp"
             tools:text="Population of the tabs to display is done through TabLayout." />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="@dimen/margin20dp"
+        <ImageView
+            android:id="@+id/image_users"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/size10"
-            android:layout_gravity="bottom">
+            android:layout_marginBottom="@dimen/size10"
+            android:layout_width="@dimen/height40dp"
+            android:layout_height="@dimen/height40dp"
+            android:src="@drawable/ic_baseline_account_circle_24" />
 
-            <ImageView
-                android:id="@+id/image_users"
-                android:layout_marginStart="@dimen/margin10dp"
-                android:layout_width="@dimen/height40dp"
-                android:layout_height="@dimen/height40dp"
-                android:src="@drawable/ic_baseline_account_circle_24"
-                tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/user"
+            android:layout_marginEnd="@dimen/size10"
+            app:layout_constraintStart_toEndOf="@id/image_users"
+            app:layout_constraintTop_toTopOf="@id/image_users"
+            app:layout_constraintBottom_toBottomOf="@id/image_users"
+            android:paddingStart="@dimen/size10"
+            app:layout_constraintVertical_weight="1"
+            android:layout_width="0dp"
+            android:maxLines="1"
+            android:maxWidth="110dp"
+            android:layout_height="wrap_content"
+            android:text="@string/no_name"
+            tools:ignore="RtlSymmetry" />
 
-            <TextView
-                android:id="@+id/user"
-                android:layout_marginStart="@dimen/size10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/publishedAt"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user"
+            android:maxWidth="150dp"
+            app:layout_constraintBottom_toBottomOf="@id/user"
+            android:scrollHorizontally="false"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            tools:text="10 Jan, 2020"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/size10"
+            tools:ignore="RtlSymmetry" />
 
-            <TextView
-                android:id="@+id/publishedAt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="10 Jan, 2020"
-                android:layout_marginStart="@dimen/height120dp"
-                android:layout_marginEnd="@dimen/margin10dp" />
-        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>

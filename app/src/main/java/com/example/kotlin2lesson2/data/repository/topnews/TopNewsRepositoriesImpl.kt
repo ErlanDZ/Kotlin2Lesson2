@@ -23,7 +23,7 @@ class TopNewsRepositoriesImpl @Inject constructor(
         q: String?,
     ): Flow<Resource<List<News>>> = doRequest {
         service.fetchTopNews(
-            "ff5055382de94f40acc1f10f5b414619",
+            "393ed9c67e7e46548ad8f15d5694fea0",
             country,
             category,
             sources,
