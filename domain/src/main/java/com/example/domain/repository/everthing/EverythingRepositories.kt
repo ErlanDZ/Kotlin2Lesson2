@@ -1,7 +1,7 @@
-package com.example.kotlin2lesson2.domain.repository.everthing
+package com.example.domain.repository.everthing
 
-import com.example.kotlin2lesson2.common.resource.Resource
-import com.example.kotlin2lesson2.domain.model.News
+import com.example.domain.common.resource.Resource
+import com.example.domain.model.News
 import kotlinx.coroutines.flow.Flow
 
 interface EverythingRepositories {

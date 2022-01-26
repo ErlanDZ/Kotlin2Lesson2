@@ -1,6 +1,6 @@
-package com.example.kotlin2lesson2.domain.usecase.everything
+package com.example.domain.usecase.everything
 
-import com.example.kotlin2lesson2.domain.repository.everthing.EverythingRepositories
+import com.example.domain.repository.everthing.EverythingRepositories
 import javax.inject.Inject
 
 class FetchNewsEverythingUseCase @Inject constructor(
