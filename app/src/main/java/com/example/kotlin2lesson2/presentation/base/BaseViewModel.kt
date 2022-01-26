@@ -2,7 +2,7 @@ package com.example.kotlin2lesson2.presentation.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.kotlin2lesson2.common.resource.Resource
+import com.example.domain.common.resource.Resource
 import com.example.kotlin2lesson2.presentation.state.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

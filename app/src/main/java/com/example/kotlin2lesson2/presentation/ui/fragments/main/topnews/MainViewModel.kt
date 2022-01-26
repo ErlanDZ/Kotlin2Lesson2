@@ -1,7 +1,7 @@
 package com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews
 
-import com.example.kotlin2lesson2.domain.usecase.everything.FetchNewsEverythingUseCase
-import com.example.kotlin2lesson2.domain.usecase.topNews.FetchTopNewsUseCase
+import com.example.domain.usecase.everything.FetchNewsEverythingUseCase
+import com.example.domain.usecase.topNews.FetchTopNewsUseCase
 import com.example.kotlin2lesson2.presentation.base.BaseViewModel
 import com.example.kotlin2lesson2.presentation.model.NewsUI
 import com.example.kotlin2lesson2.presentation.model.toUI
