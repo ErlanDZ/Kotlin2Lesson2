@@ -1,10 +1,11 @@
-package com.example.kotlin2lesson2.data.remote
+package com.example.data.remote
 
-import com.example.kotlin2lesson2.common.constance.Constance
-import com.example.kotlin2lesson2.data.remote.apiservice.EverythingApiService
-import com.example.kotlin2lesson2.data.remote.apiservice.NewsApiService
+import com.example.domain.common.constance.Constance
+import com.example.data.remote.apiservice.EverythingApiService
+import com.example.data.remote.apiservice.NewsApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit

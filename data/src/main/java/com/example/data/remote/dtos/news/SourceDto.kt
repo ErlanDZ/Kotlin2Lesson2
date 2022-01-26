@@ -1,6 +1,6 @@
-package com.example.kotlin2lesson2.data.remote.dtos.news
+package com.example.data.remote.dtos.news
 
-import com.example.kotlin2lesson2.domain.model.Source
+import com.example.domain.model.Source
 import com.google.gson.annotations.SerializedName
 
 data class SourceDto(

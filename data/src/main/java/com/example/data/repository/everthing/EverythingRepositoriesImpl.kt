@@ -1,11 +1,12 @@
-package com.example.kotlin2lesson2.data.repository.everthing
+package com.example.data.repository.everthing
 
-import com.example.kotlin2lesson2.common.base.BaseRepository
-import com.example.kotlin2lesson2.common.resource.Resource
-import com.example.kotlin2lesson2.data.remote.apiservice.EverythingApiService
-import com.example.kotlin2lesson2.data.remote.dtos.news.toDomain
-import com.example.kotlin2lesson2.domain.model.News
-import com.example.kotlin2lesson2.domain.repository.everthing.EverythingRepositories
+
+import com.example.domain.common.resource.Resource
+import com.example.data.remote.apiservice.EverythingApiService
+import com.example.data.remote.dtos.news.toDomain
+import com.example.domain.model.News
+import com.example.data.repository.base.BaseRepository
+import com.example.domain.repository.everthing.EverythingRepositories
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

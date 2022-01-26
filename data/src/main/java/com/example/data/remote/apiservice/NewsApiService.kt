@@ -1,7 +1,7 @@
-package com.example.kotlin2lesson2.data.remote.apiservice
+package com.example.data.remote.apiservice
 
-import com.example.kotlin2lesson2.data.remote.dtos.news.NewsDto
-import com.example.kotlin2lesson2.data.remote.dtos.news.NewsResponseDto
+import com.example.data.remote.dtos.news.NewsDto
+import com.example.data.remote.dtos.news.NewsResponseDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 
