@@ -19,4 +19,9 @@
         android:name="com.example.kotlin2lesson2.presentation.ui.fragments.detailed.DetailedFragment"
         android:label="fragment_detailed"
         tools:layout="@layout/fragment_detailed" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>
