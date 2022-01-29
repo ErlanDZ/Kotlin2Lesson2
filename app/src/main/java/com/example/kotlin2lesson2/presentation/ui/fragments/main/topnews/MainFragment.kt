@@ -47,6 +47,7 @@ class MainFragment :
 
         recyclerViewHorizontal.adapter = newsAdapter
 
+
         setupListener()
     }
 

@@ -1,6 +1,6 @@
 package com.example.kotlin2lesson2.presentation.model
 
-import com.example.kotlin2lesson2.domain.model.News
+import com.example.domain.model.News
 import com.example.kotlin2lesson2.presentation.base.IBaseDiffModel
 
 class NewsUI(

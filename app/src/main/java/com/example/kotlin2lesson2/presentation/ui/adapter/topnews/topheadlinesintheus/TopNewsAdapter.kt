@@ -36,14 +36,14 @@ class TopNewsAdapter : ListAdapter<NewsUI, TopNewsAdapter.TopNewsViewHolder>(
         fun onBind(news: NewsUI) = with(binding) {
             title.text = news.title
             publishedAt.text = news.publishedAt
-            if (news.author == "") {
-                val users = "User"
+            if (news.author == null) {
+                val users = "No name"
                 user.text = users
             } else {
                 user.text = news.author
             }
 
-            if (news.urlToImage == "") {
+            if (news.urlToImage == null) {
                 imageTopNews.setImageResource(R.drawable.news_image)
             } else {
                 imageTopNews.load(news.urlToImage)

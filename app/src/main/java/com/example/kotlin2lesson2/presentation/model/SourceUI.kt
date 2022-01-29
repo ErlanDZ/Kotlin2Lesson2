@@ -1,6 +1,6 @@
 package com.example.kotlin2lesson2.presentation.model
 
-import com.example.kotlin2lesson2.domain.model.Source
+import com.example.domain.model.Source
 
 data class SourceUI(
     val id: String?,
