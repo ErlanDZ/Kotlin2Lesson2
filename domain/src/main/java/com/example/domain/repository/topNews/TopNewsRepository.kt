@@ -11,5 +11,6 @@ interface TopNewsRepository {
         category: String?,
         sources: String?,
         q: String?,
+        page: Int
     ): Flow<Resource<List<News>>>
 }

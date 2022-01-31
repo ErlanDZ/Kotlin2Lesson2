@@ -15,7 +15,6 @@ class EverythingRepositoriesImpl @Inject constructor(
 ) : BaseRepository(), EverythingRepositories {
 
     private var positionPageSize: Int = 100
-    private var positionPage: Int = 100
 
     override fun fetchNewsEverythingRepositories(
         q: String?,
@@ -27,7 +26,6 @@ class EverythingRepositoriesImpl @Inject constructor(
         domains: String,
         excludeDomains: String,
     ): Flow<Resource<List<News>>> = doRequest {
-
         service.fetchEverything(
             "393ed9c67e7e46548ad8f15d5694fea0",
             q,
@@ -39,10 +37,6 @@ class EverythingRepositoriesImpl @Inject constructor(
             domains,
             excludeDomains,
             positionPageSize,
-//            positionPage,
-        )
-            .article.map {
-                it.toDomain()
-            }
+        ).article.map { it.toDomain() }
     }
 }

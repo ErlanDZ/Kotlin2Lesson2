@@ -29,15 +29,27 @@ class MainViewModel @Inject constructor(
     private val _search = MutableStateFlow<UIState<List<NewsUI>>>(UIState.Loading())
     val search: StateFlow<UIState<List<NewsUI>>> = _search
 
+    var page: Int = 1
+
+    init {
+        fetchCategories(
+            "",
+            "",
+            "",
+            "",
+            1
+        )
+    }
 
     fun fetchTopNews(
         country: String?,
         category: String?,
         sources: String?,
         q: String?,
+        page: Int
     ) {
         _topNewsState.subscribeTo(
-            { fetchTopNewsUseCase(country, category, sources, q) },
+            { fetchTopNewsUseCase(country, category, sources, q, page) },
             { it.map { data -> data.toUI() } })
     }
 
@@ -46,9 +58,10 @@ class MainViewModel @Inject constructor(
         category: String?,
         sources: String?,
         q: String?,
+        page: Int,
     ) {
         _categoriesState.subscribeTo(
-            { fetchTopNewsUseCase(country, category, sources, q) },
+            { fetchTopNewsUseCase(country, category, sources, q, page) },
             { it.map { data -> data.toUI() } })
     }
 
@@ -81,7 +94,7 @@ class MainViewModel @Inject constructor(
 
     fun search(q: String) {
         _search.subscribeTo({
-            fetchTopNewsUseCase("", "", "", q)
+            fetchTopNewsUseCase("", "", "", q, 1)
         }, { it.map { data -> data.toUI() } })
     }
 }

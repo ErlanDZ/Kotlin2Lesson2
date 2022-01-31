@@ -11,5 +11,6 @@ class FetchTopNewsUseCase @Inject constructor(
         category: String?,
         sources: String?,
         q: String?,
-    ) = repository.fetchTopNewsRepository(country, category, sources, q)
+        page: Int,
+    ) = repository.fetchTopNewsRepository(country, category, sources, q, page)
 }
