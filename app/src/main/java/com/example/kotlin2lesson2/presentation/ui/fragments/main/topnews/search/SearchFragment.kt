@@ -4,6 +4,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.kotlin2lesson2.R
@@ -12,6 +13,7 @@ import com.example.kotlin2lesson2.presentation.base.BaseFragment
 import com.example.kotlin2lesson2.presentation.model.NewsUI
 import com.example.kotlin2lesson2.presentation.state.UIState
 import com.example.kotlin2lesson2.presentation.ui.adapter.topnews.search.SearchAdapter
+import com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews.MainFragmentDirections
 import com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,6 +26,7 @@ class SearchFragment :
     private val searchAdapter = SearchAdapter(
         this::setOnItemClickListener
     )
+
     private var currentText = ""
     private val handler = Handler(Looper.getMainLooper())
     private val searchRunnable = Runnable {
@@ -61,5 +64,9 @@ class SearchFragment :
         }
     }
 
-    private fun setOnItemClickListener(id: NewsUI) {}
+    private fun setOnItemClickListener(id: NewsUI) {
+        findNavController().navigate(
+            SearchFragmentDirections.actionSearchFragmentToDetailedFragment(id)
+        )
+    }
 }
