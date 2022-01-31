@@ -10,7 +10,9 @@ import com.example.kotlin2lesson2.databinding.NewsItemBinding
 import com.example.kotlin2lesson2.presentation.base.BaseComparator
 import com.example.kotlin2lesson2.presentation.model.NewsUI
 
-class NewsAdapter : ListAdapter<NewsUI, NewsAdapter.NewsViewHolder>(
+class NewsAdapter(
+    private val itemClick: (item: NewsUI) -> Unit,
+) : ListAdapter<NewsUI, NewsAdapter.NewsViewHolder>(
     BaseComparator()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
@@ -31,6 +33,14 @@ class NewsAdapter : ListAdapter<NewsUI, NewsAdapter.NewsViewHolder>(
     inner class NewsViewHolder(
         private val binding: NewsItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener{
+                getItem(absoluteAdapterPosition)?.let {
+                    itemClick(it)
+                }
+            }
+        }
 
         fun onBind(news: NewsUI) = with(binding) {
             publishedAt.text = news.publishedAt

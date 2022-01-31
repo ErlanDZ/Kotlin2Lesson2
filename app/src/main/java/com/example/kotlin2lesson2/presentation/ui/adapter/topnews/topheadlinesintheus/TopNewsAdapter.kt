@@ -9,10 +9,10 @@ import com.example.kotlin2lesson2.R
 import com.example.kotlin2lesson2.databinding.TopNewsItemBinding
 import com.example.kotlin2lesson2.presentation.base.BaseComparator
 import com.example.kotlin2lesson2.presentation.model.NewsUI
-import com.example.kotlin2lesson2.presentation.state.UIState
-import kotlinx.coroutines.flow.callbackFlow
 
-class TopNewsAdapter : ListAdapter<NewsUI, TopNewsAdapter.TopNewsViewHolder>(
+class TopNewsAdapter(
+    private val itemClick: (item: NewsUI) -> Unit,
+) : ListAdapter<NewsUI, TopNewsAdapter.TopNewsViewHolder>(
     BaseComparator()
 ) {
 
@@ -33,6 +33,14 @@ class TopNewsAdapter : ListAdapter<NewsUI, TopNewsAdapter.TopNewsViewHolder>(
         private val binding: TopNewsItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            itemView.setOnClickListener{
+                getItem(absoluteAdapterPosition)?.let {
+                    itemClick(it)
+                }
+            }
+        }
+
         fun onBind(news: NewsUI) = with(binding) {
             title.text = news.title
             publishedAt.text = news.publishedAt
@@ -43,12 +51,11 @@ class TopNewsAdapter : ListAdapter<NewsUI, TopNewsAdapter.TopNewsViewHolder>(
                 user.text = news.author
             }
 
-            if (news.urlToImage == null) {
-                imageTopNews.setImageResource(R.drawable.news_image)
+            if (news.urlToImage == "") {
+                topNewsIm.setImageResource(R.drawable.news_image)
             } else {
-                imageTopNews.load(news.urlToImage)
+                topNewsIm.load(news.urlToImage)
             }
         }
     }
-
 }
