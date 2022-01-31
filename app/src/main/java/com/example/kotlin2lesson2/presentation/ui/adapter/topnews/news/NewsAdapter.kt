@@ -15,8 +15,10 @@ class NewsAdapter : ListAdapter<NewsUI, NewsAdapter.NewsViewHolder>(
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         return NewsViewHolder(
-            NewsItemBinding.inflate(LayoutInflater.from(parent.context),
-                parent, false)
+            NewsItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false
+            )
         )
     }
 
@@ -26,7 +28,7 @@ class NewsAdapter : ListAdapter<NewsUI, NewsAdapter.NewsViewHolder>(
         }
     }
 
-    class NewsViewHolder(
+    inner class NewsViewHolder(
         private val binding: NewsItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 

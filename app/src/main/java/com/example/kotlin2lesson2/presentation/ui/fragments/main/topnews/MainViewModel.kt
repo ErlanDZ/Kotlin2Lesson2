@@ -26,6 +26,10 @@ class MainViewModel @Inject constructor(
     private val _newsEverythingState = MutableStateFlow<UIState<List<NewsUI>>>(UIState.Loading())
     val newsEverythingState: StateFlow<UIState<List<NewsUI>>> = _newsEverythingState
 
+    private val _search = MutableStateFlow<UIState<List<NewsUI>>>(UIState.Loading())
+    val search: StateFlow<UIState<List<NewsUI>>> = _search
+
+
     fun fetchTopNews(
         country: String?,
         category: String?,
@@ -59,7 +63,8 @@ class MainViewModel @Inject constructor(
         excludeDomains: String,
     ) {
         _newsEverythingState.subscribeTo(
-            { fetchNewsEverythingUseCase(
+            {
+                fetchNewsEverythingUseCase(
                     q,
                     from,
                     to,
@@ -67,8 +72,16 @@ class MainViewModel @Inject constructor(
                     qInTitle,
                     sources,
                     domains,
-                    excludeDomains, ) },
-            {it.map { data-> data.toUI() }}
+                    excludeDomains,
+                )
+            },
+            { it.map { data -> data.toUI() } }
         )
+    }
+
+    fun search(q: String) {
+        _search.subscribeTo({
+            fetchTopNewsUseCase("", "", "", q)
+        }, { it.map { data -> data.toUI() } })
     }
 }
