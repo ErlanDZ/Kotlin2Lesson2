@@ -13,23 +13,23 @@ class TopNewsRepositoriesImpl @Inject constructor(
     private val service: NewsApiService,
 ) : BaseRepository(), TopNewsRepository {
 
-    private var positionPageSize: Int = 10
-    private var positionPage: Int = 1
+    private var positionPageSize: Int = 100
 
     override fun fetchTopNewsRepository(
         country: String?,
         category: String?,
         sources: String?,
         q: String?,
+        page: Int
     ): Flow<Resource<List<News>>> = doRequest {
         service.fetchTopNews(
-            "393ed9c67e7e46548ad8f15d5694fea0",
+            "ed4cef1b46fc4c4b9bcbae4496fc2f58",
             country,
             category,
             sources,
             q,
             positionPageSize,
-            positionPage,
+            page,
         )
             .article.map { it.toDomain() }
     }

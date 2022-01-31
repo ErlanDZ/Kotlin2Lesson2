@@ -9,7 +9,9 @@ import com.example.kotlin2lesson2.databinding.SearchItemBinding
 import com.example.kotlin2lesson2.presentation.base.BaseComparator
 import com.example.kotlin2lesson2.presentation.model.NewsUI
 
-class SearchAdapter(private val onItemClick: (id: NewsUI) -> Unit) :
+class SearchAdapter(
+    private val onItemClickSearch: (id: NewsUI) -> Unit
+) :
     ListAdapter<NewsUI, SearchAdapter.SearchViewHolder>(
         BaseComparator()
     ) {
@@ -32,17 +34,18 @@ class SearchAdapter(private val onItemClick: (id: NewsUI) -> Unit) :
     inner class SearchViewHolder(
         private val binding: SearchItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(news: NewsUI) = with(binding) {
-            imgSearch.load(news.urlToImage)
-            titleSearch.text = news.title
-        }
 
         init {
             itemView.setOnClickListener {
                 getItem(absoluteAdapterPosition)?.let {
-                    onItemClick(it)
+                    onItemClickSearch(it)
                 }
             }
+        }
+
+        fun onBind(news: NewsUI) = with(binding) {
+            imgSearch.load(news.urlToImage)
+            titleSearch.text = news.title
         }
     }
 }
