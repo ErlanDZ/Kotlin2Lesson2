@@ -18,10 +18,18 @@
         android:id="@+id/detailedFragment"
         android:name="com.example.kotlin2lesson2.presentation.ui.fragments.detailed.DetailedFragment"
         android:label="fragment_detailed"
-        tools:layout="@layout/fragment_detailed" />
+        tools:layout="@layout/fragment_detailed" >
+        <argument
+            android:name="item"
+            app:argType="com.example.kotlin2lesson2.presentation.model.NewsUI" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.kotlin2lesson2.presentation.ui.fragments.main.topnews.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailedFragment"
+            app:destination="@id/detailedFragment" />
+    </fragment>
 </navigation>
