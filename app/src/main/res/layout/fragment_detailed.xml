@@ -46,9 +46,10 @@
 
             <ImageView
                 android:id="@+id/mews_img"
+                android:scaleType="fitXY"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:src="@tools:sample/avatars"
+                tools:src="@drawable/news_image"
                 tools:ignore="ContentDescription" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -77,7 +78,8 @@
                 android:id="@+id/author_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:src="@tools:sample/avatars"
+                tools:src="@drawable/news_image"
+                android:scaleType="fitXY"
                 tools:ignore="ContentDescription" />
 
         </androidx.cardview.widget.CardView>
